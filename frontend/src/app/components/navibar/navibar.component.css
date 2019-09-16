@@ -1,3 +1,8 @@
 nav>>>a.brand-color {
     color: white;
 }
+
+nav>>>a.brand-color:hover {
+    color: white;
+    cursor: pointer;
+}
