@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row d-flex justify-content-center mg-top">
+        <b>Bitte wählen Sie ein Symbol</b>
+    </div>
+    <div class="row d-flex justify-content-center spiel-btn-con">
+        <a class="btn btn-info spiel-btn d-flex align-items-center justify-content-center" (click)="symbolClicked(stein)">
+            <i class="fa fa-hand-rock-o"></i>
+            <!--Stein -->
+        </a>
+        <a class="btn btn-success spiel-btn d-flex align-items-center justify-content-center" (click)="symbolClicked(papier)">
+            <i class="fa fa-hand-paper-o"></i>
+            <!-- Papier -->
+        </a>
+        <a class="btn btn-warning spiel-btn d-flex align-items-center justify-content-center" (click)="symbolClicked(schere)">
+            <i class="fa fa-hand-scissors-o"></i>
+            <!-- Schere -->
+        </a>
+    </div>
+</div>
