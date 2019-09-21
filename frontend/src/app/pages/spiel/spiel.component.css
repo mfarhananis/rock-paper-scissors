@@ -1,15 +1,63 @@
 div.row.mg-top {
-    margin-top: 70px;
+    margin-top: 40px;
 }
 
 div>>>a.btn.spiel-btn {
     color: white;
-    margin-left: 50px;
-    width: 200px;
-    height: 200px;
+    margin-left: 15px;
+    width: 150px;
+    height: 150px;
     font-size: 72px;
+    cursor: pointer;
 }
 
 .spiel-btn-con {
-    margin-top: 100px;
+    margin-top: 40px;
+}
+
+.auswahl {
+    margin-top: 40px;
+}
+
+.mg-rechner {
+    margin-left: 90px;
+}
+
+.ergebnis-icon {
+    margin-left: 10px;
+    font-size: xx-large
+}
+
+.ergebnis-text {
+    font-size: x-large;
+}
+
+.ergebnis-con {
+    width: 220px;
+    height: 50px;
+    border-radius: 5px
+}
+
+.ergebnis-all {
+    height: 50px;
+}
+
+.ergebnis-circles {
+    border-radius: 20px;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+@media (max-width: 576px) {
+    div>>>a.btn.spiel-btn {
+        margin-left: 15px;
+        width: 75px;
+        height: 75px;
+        font-size: 52px;
+    }
+    .mg-rechner {
+        margin-left: 40px;
+    }
 }

@@ -1,19 +1,55 @@
 <div class="container">
     <div class="row d-flex justify-content-center mg-top">
-        <b>Bitte wählen Sie ein Symbol</b>
+        <b>Bitte klicken Sie auf ein Zeichen</b>
     </div>
     <div class="row d-flex justify-content-center spiel-btn-con">
-        <a class="btn btn-info spiel-btn d-flex align-items-center justify-content-center" (click)="symbolClicked(stein)">
+        <a class="btn btn-info spiel-btn d-flex align-items-center justify-content-center" (click)="symbolClicked(stein)" data-toggle="popover" data-trigger="hover" data-content="Stein" data-placement="top">
             <i class="fa fa-hand-rock-o"></i>
             <!--Stein -->
         </a>
-        <a class="btn btn-success spiel-btn d-flex align-items-center justify-content-center" (click)="symbolClicked(papier)">
+        <a class="btn btn-info spiel-btn d-flex align-items-center justify-content-center" (click)="symbolClicked(papier)" data-toggle="popover" data-trigger="hover" data-content="Papier" data-placement="top">
             <i class="fa fa-hand-paper-o"></i>
             <!-- Papier -->
         </a>
-        <a class="btn btn-warning spiel-btn d-flex align-items-center justify-content-center" (click)="symbolClicked(schere)">
+        <a class="btn btn-info spiel-btn d-flex align-items-center justify-content-center" (click)="symbolClicked(schere)" data-toggle="popover" data-trigger="hover" data-content="Schere" data-placement="top">
             <i class="fa fa-hand-scissors-o"></i>
             <!-- Schere -->
         </a>
+    </div>
+    <div class="row d-flex justify-content-center auswahl" *ngIf="auswahlErgebnisZeigen">
+        <div>Deine Wahl: {{ player1.selectedSymboltoString() }}</div>
+        <div class="mg-rechner">{{ player2.name }} Wahl: {{ player2.selectedSymboltoString() }}</div>
+    </div>
+    <div class="row d-flex justify-content-center auswahl ergebnis-all" *ngIf="auswahlErgebnisZeigen">
+        <div class="d-flex justify-content-center align-items-center bg-success text-light ergebnis-con" *ngIf="gewonnen">
+            <span class="ergebnis-text"> Gewonnen </span>
+            <i class="fa fa-smile-o ergebnis-icon"></i>
+        </div>
+        <div class="d-flex justify-content-center align-items-center bg-warning text-light ergebnis-con" *ngIf="unentschieden">
+            <span class="ergebnis-text"> Unentschieden </span>
+            <i class="fa fa-meh-o ergebnis-icon"></i>
+        </div>
+        <div class="d-flex justify-content-center align-items-center bg-danger text-light ergebnis-con" *ngIf="verloren">
+            <span class="ergebnis-text"> Verloren </span>
+            <i class="fa fa-frown-o ergebnis-icon"></i>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center auswahl" *ngIf="auswahlErgebnisZeigen">
+        <span class="d-flex align-items-center justify-content-center bg-success ergebnis-circles">
+            {{spielService.gewinnCount}} 
+        </span>
+        <span class="d-flex align-items-center justify-content-center bg-warning ergebnis-circles"> 
+            {{spielService.unentCount}} 
+        </span>
+        <span class="d-flex align-items-center justify-content-center bg-danger ergebnis-circles"> 
+            {{spielService.verlorCount}} 
+        </span>
+    </div>
+    <div class="row d-flex justify-content-center auswahl" *ngIf="auswahlErgebnisZeigen">
+        <span style="font-size: medium; text-align: center;"> 
+            um nochmal zu spielen, ein Zeichen oben 
+            (<i class="fa fa-hand-rock-o"></i> - <i class="fa fa-hand-paper-o"></i> - <i class="fa fa-hand-scissors-o"></i>)
+            nochmal klicken. 
+        </span>
     </div>
 </div>

@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+    frontend:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        image: sps-frontend
+        ports:
+            - "4000:80"

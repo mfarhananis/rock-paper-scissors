@@ -1,15 +1,17 @@
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light bg-primary navbar-expand-md">
     <a class="navbar-brand brand-color" href="">
         Stein <i class="fa fa-hand-rock-o"></i> - 
         Papier <i class="fa fa-hand-paper-o"></i> - 
         Schere <i class="fa fa-hand-scissors-o"></i>
     </a>
-    <!--<ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link active brand-color" href="#"><i class="fa fa-info-circle"></i> Info</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link brand-color" href="#"><i class="fa fa-play-circle"></i> Spielen</a>
-        </li>
-    </ul>-->
+    <button *ngIf="showReset()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-navicon" style="color: white;"></i>
+    </button>
+    <div *ngIf="showReset()" class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link brand-color" (click)="reset()"><i class="fa fa-repeat"></i> Reset</a>
+            </li>
+        </ul>
+    </div>
 </nav>

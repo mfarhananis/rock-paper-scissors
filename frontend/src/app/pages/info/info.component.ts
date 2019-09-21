@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeitenService } from 'src/app/services/seiten.service';
 
 @Component({
   selector: 'app-info',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private seitenService: SeitenService) { }
 
   ngOnInit() {
+    this.seitenService.path = '';
   }
 
 }

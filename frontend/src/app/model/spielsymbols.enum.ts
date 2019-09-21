@@ -1,5 +1,5 @@
 export enum Spielsymbols {
-    STEIN,
+    STEIN = 1,
     PAPIER,
     SCHERE
 }
