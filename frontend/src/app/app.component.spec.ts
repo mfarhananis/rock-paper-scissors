@@ -1,3 +1,4 @@
+import { NavibarComponent } from './components/navibar/navibar.component';
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
+        NavibarComponent,
         AppComponent
       ],
     }).compileComponents();
@@ -23,13 +25,6 @@ describe('AppComponent', () => {
   it(`should have as title 'frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('frontend');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('frontend app is running!');
+    expect(app.title).toEqual('Stein-Papier-Schere');
   });
 });

@@ -1,6 +1,10 @@
 import { Player } from './../model/player';
 import { Spielsymbols } from './../model/spielsymbols.enum';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { SpielResponse } from '../model/spiel-response';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +15,7 @@ export class SpielService {
   unentCount: number;
   verlorCount: number;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.reset();
   }
 
@@ -21,11 +25,8 @@ export class SpielService {
     this.verlorCount = 0;
   }
 
-  pickRandomSymbol(): Spielsymbols {
-    return Math.floor(Math.random() * (1 + Spielsymbols.SCHERE - Spielsymbols.STEIN)) + Spielsymbols.STEIN;
-  }
-
-  istUnentschieden(p1: Player, p2: Player): boolean {
-    return p1.selectedSymbol === p2.selectedSymbol;
+  spielen(benutzerWahl: number): Observable<any> {
+    const backendUrl = `${environment.backendUrl}${benutzerWahl}`;
+    return this.http.get(backendUrl);
   }
 }

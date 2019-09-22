@@ -8,6 +8,7 @@ import { NavibarComponent } from './components/navibar/navibar.component';
 import { InfoComponent } from './pages/info/info.component';
 import { SpielComponent } from './pages/spiel/spiel.component';
 import { SeitenService } from './services/seiten.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SeitenService } from './services/seiten.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [SpielService, SeitenService],
   bootstrap: [AppComponent]

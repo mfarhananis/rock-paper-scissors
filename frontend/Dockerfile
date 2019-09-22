@@ -19,7 +19,8 @@ RUN npm install -g @angular/cli@latest
 COPY . /app
 
 # build app
-CMD ["ng", "build"]
+#CMD ["ng", "build"]
+RUN ng build
 
 
 FROM nginx:alpine

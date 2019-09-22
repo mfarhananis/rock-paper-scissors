@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpielComponent } from './spiel.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('SpielComponent', () => {
   let component: SpielComponent;
@@ -8,6 +9,7 @@ describe('SpielComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [ SpielComponent ]
     })
     .compileComponents();

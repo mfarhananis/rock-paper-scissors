@@ -1,8 +1,10 @@
+import { Ergebnis } from './../../model/ergebnis.enum';
 import { Player } from './../../model/player';
 import { SpielService } from './../../services/spiel.service';
 import { Spielsymbols } from './../../model/spielsymbols.enum';
 import { Component, OnInit } from '@angular/core';
 import { SeitenService } from 'src/app/services/seiten.service';
+import { SpielResponse } from 'src/app/model/spiel-response';
 
 @Component({
   selector: 'app-spiel',
@@ -52,27 +54,31 @@ export class SpielComponent implements OnInit {
 
     this.player2 = new Player();
     this.player2.name = 'Rechner';
-    this.player2.selectedSymbol = this.spielService.pickRandomSymbol();
 
-    if (this.spielService.istUnentschieden(this.player1, this.player2)) {
-      this.spielService.unentCount++;
-      this.unentschieden = true;
-      this.gewonnen = false;
-      this.verloren = false;
-    } else {
-      this.unentschieden = false;
+    this.spielService.spielen(this.player1.selectedSymbol).subscribe((response: SpielResponse) => {
+      this.player2.selectedSymbol = response.rechnerWahl;
 
-      if ((this.player1.selectedSymbol === 1 && this.player2.selectedSymbol === 3)
-      || (this.player1.selectedSymbol === 2 && this.player2.selectedSymbol === 1)
-      || (this.player1.selectedSymbol === 3 && this.player2.selectedSymbol === 2)) {
-        this.spielService.gewinnCount++;
-        this.gewonnen = true;
-        this.verloren = false;
-      } else {
-        this.spielService.verlorCount++;
-        this.verloren = true;
-        this.gewonnen = false;
+      switch (response.ergebnis) {
+        case Ergebnis.GEWONNEN:
+          this.spielService.gewinnCount++;
+          this.unentschieden = false;
+          this.gewonnen = true;
+          this.verloren = false;
+          break;
+        case Ergebnis.VERLOREN:
+          this.spielService.verlorCount++;
+          this.unentschieden = false;
+          this.verloren = true;
+          this.gewonnen = false;
+          break;
+        case Ergebnis.UNENTSCHIEDEN:
+          this.spielService.unentCount++;
+          this.unentschieden = true;
+          this.gewonnen = false;
+          this.verloren = false;
+          break;
       }
-    }
+
+    });
   }
 }
