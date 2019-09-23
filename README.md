@@ -13,7 +13,7 @@ This is an implementation of famous Rock-Paper-Scissors game. In this applicatio
 * ...
 
 ## Deploy and Run (Local Computer)
-In order to run this application locally, the local computer must have **[git]**(https://git-scm.com/downloads) and **[docker]**(https://www.docker.com/get-started) installed. Please follow the following steps to deploy and run the application with docker.
+In order to run this application locally, the local computer must have **[git](https://git-scm.com/downloads)** and **[docker](https://www.docker.com/get-started)** installed. Please follow the following steps to deploy and run the application with docker.
 
 ```
 # clone project from github repository
