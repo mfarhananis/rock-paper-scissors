@@ -1,5 +1,12 @@
 version: '3.7'
 services:
+    backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        image: sps-backend
+        ports:
+            - 8181:8080
     frontend:
         build:
             context: ./frontend
@@ -7,3 +14,5 @@ services:
         image: sps-frontend
         ports:
             - "4000:80"
+        depends_on:
+            - backend
