@@ -1,6 +1,13 @@
 # Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
+Frontend is completely responsive and is optimised for all platforms (mobile, tablet, laptop, desktop). This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
+
+## Technologies
+
+* [Angular 8](https://angular.io/)
+* [Angular CLI](https://cli.angular.io/)
+* [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+* ...
 
 ## Development server
 
