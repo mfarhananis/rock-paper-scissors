@@ -12,7 +12,7 @@ This is an implementation of famous Rock-Paper-Scissors game. With this applicat
 * [Docker Compose](https://docs.docker.com/compose/)
 * ...
 
-## Deploy and Run (Local Computer)
+## Build and Run (Local Computer)
 In order to run this application locally, the local computer must have **[git](https://git-scm.com/downloads)** and **[docker](https://www.docker.com/get-started)** installed. Please follow the following steps to deploy and run the application with docker.
 
 ```
