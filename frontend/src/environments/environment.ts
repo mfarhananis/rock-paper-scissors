@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  backendUrl: 'http://localhost:9090/sps/ergebnis/'
+  backendUrl: 'http://localhost:8181/sps/ergebnis/'
 };
 
 /*
