@@ -1,5 +1,5 @@
 # rock-paper-scissors
-This is an implementation of famous Rock-Paper-Scissors game. In this application you can play against computer. The application consist of two folders frontend and backend.
+This is an implementation of famous Rock-Paper-Scissors game. In this application you can play against computer. The application consist of two folders (parts), frontend and backend.
 
 ## Technologies
 
